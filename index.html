@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/ion.calendar.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/moment-with-locales.min.js"></script>
+<script src="js/ion.calendar.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+
+<script>
+$(function(){
+$("#GimimoData").ionCalendar({
+lang:"lt", years:"1950-2011", sundayFirst: false,
+onClick:function(date){
+$("#pasirinktaData").html(date);
+}
+});
+$("#mydate").ionDatePicker();
+});
+</script>
+
+<!--------------->
+
+
+<!--------------->
+
+</head>
+<body>
+
+<div class="main">
+	<div class="social-icons">
+		<div class="clear"> </div>	
+      </div>
+	  
+      <h2>Registracijos Forma</h2>
+	  
+		<form>
+		   <div class="vardas">
+		        <div class="col_1_of_2 span_1_of_2">	<input type="text" class="text" value="Vardas" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Vardas';}"></div>
+                <div class="col_1_of_2 span_1_of_2">	<input type="text" class="text" value="Pavardė" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Pavardė';}"></div>
+                <div class="clear"> </div>
+		   </div>
+		   
+		   <div class="elpastui">
+		        <input type="text" class="text" value="e-mail@stud.vgtu.lt" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'e-mail@stud.vgtu.lt';}">
+		   </div>
+		   
+		   <div class="slaptazodis">
+		        <div class="col_1_of_2 span_1_of_2">	<input type="password" class="text" value="slaptazodis" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"></div>
+                <div class="col_1_of_2 span_1_of_2">	<input type="password" class="text" value="slaptazodis" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"></div>
+				<div class="clear"> </div>
+		   </div>
+		   
+		    <div class="elpastui">
+		        <input type="text" class="text" value="Telefono numeris " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefono numeris';}">
+		   </div>
+		   
+		   
+			<div class = "tarpai">
+				<input id="radio-1" class="radio-custom" name="radio-group" type="radio">
+				<label for="radio-1" class="radio-custom-label">Vyras</label>
+			
+				<input id="radio-2" class="radio-custom" name="radio-group" type="radio">
+				<label for="radio-2" class="radio-custom-label">Moteris</label>
+			</div>
+
+			<div id="GimimoData"></div>
+			<div id="pasirinktaData"></div>
+			
+			<label for="pasirinktaData" id="pasirinktaData">Some text field</label>
+			<input type="text" id="pasirinktaData">
+			
+			
+				<br><br>
+				<input type="submit" onclick="myFunction()" value="Registruotis" >
+			<div class="clear"> </div>
+
+<!--------------->
+
+
+
+<!--------------->
+
+
+
+		</form>
+		</div>
+</body>
+</html>
