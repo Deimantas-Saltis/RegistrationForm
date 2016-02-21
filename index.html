@@ -1,34 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="lt">
 <head>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href="css/ion.calendar.css" rel="stylesheet" type="text/css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/moment-with-locales.min.js"></script>
-<script src="js/ion.calendar.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-
-
-<script>
-$(function(){
-$("#GimimoData").ionCalendar({
-lang:"lt", years:"1950-2011", sundayFirst: false,
-onClick:function(date){
-$("#pasirinktaData").html(date);
-}
-});
-$("#mydate").ionDatePicker();
-});
-</script>
-
-<!--------------->
-
-
-<!--------------->
+<link href="jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
+<script src="jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+<script src="jquery-ui-1.11.4/jquery-ui.js"></script>
 
 </head>
 <body>
@@ -60,34 +39,31 @@ $("#mydate").ionDatePicker();
 		    <div class="elpastui">
 		        <input type="text" class="text" value="Telefono numeris " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefono numeris';}">
 		   </div>
-		   
-		   
-			<div class = "tarpai">
-				<input id="radio-1" class="radio-custom" name="radio-group" type="radio">
-				<label for="radio-1" class="radio-custom-label">Vyras</label>
-			
-				<input id="radio-2" class="radio-custom" name="radio-group" type="radio">
-				<label for="radio-2" class="radio-custom-label">Moteris</label>
+
+			<form style="margin-top: 1em;">
+				<div id="radioset" class="tarpai">
+					<input type="radio" id="radio1" name="radio">
+					<label for="radio1">Vyras</label>
+
+					<input type="radio" id="radio2" name="radio">
+					<label for="radio2">Moteris</label>
+				</div>
+			</form>
+
+			<div class="gdata">
+			<input id="datepicker" type="text" size="63">
 			</div>
 
-			<div id="GimimoData"></div>
-			<div id="pasirinktaData"></div>
-			
-			<label for="pasirinktaData" id="pasirinktaData">Some text field</label>
-			<input type="text" id="pasirinktaData">
-			
-			
 				<br><br>
 				<input type="submit" onclick="myFunction()" value="Registruotis" >
 			<div class="clear"> </div>
 
-<!--------------->
-
-
-
-<!--------------->
-
-
+			<script>
+				$( "#radioset" ).buttonset();
+				$( "#datepicker" ).datepicker({
+					inline: true
+				});
+			</script>
 
 		</form>
 		</div>

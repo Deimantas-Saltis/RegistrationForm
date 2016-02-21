@@ -74,7 +74,8 @@ body{
 	font-family: 'Oxygen', sans-serif;
 }
 .tarpai{
-	word-spacing: 16.5em;
+	word-spacing: 1em;
+	margin: 0px 150px;
 }
 .main h3{
 	font-size: 1em;
@@ -88,28 +89,24 @@ body{
 	padding:1em 0;
 	font-family: 'Oxygen', sans-serif;
 }
-.gdata input[type="text"] { 
-	padding: 4px;
-	width: 97%;
-	font-size: 1em;
-	margin: 0px 0px;
-	border:none;
-	color: #666666;
-	cursor: pointer;
-	background: none;
-	float: midd;
-	outline: none;
-	font-weight: 700;
-	font-family: 'Oxygen', sans-serif;
-	background: #ffffff;
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
-	-ms-transition: all 0.3s ease-out;
-	-o-transition: all 0.3s ease-out;
-	border-left: 6px solid #fff;
-	border-bottom: none;
-	border-right: none;
-	border-top: none;
+.gdata input[type="text"] {
+    padding: 4px;
+    width: 98%;
+    font-size: 2em;
+    text-align: center;
+    margin: 20px 0px;
+    border: none;
+    color: #666666;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    font-weight: 700;
+    font-family: 'Oxygen', sans-serif;
+    background: #ffffff;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
 }
 .mygtukas input[type="text"] { 
 	padding: 4px;
@@ -120,7 +117,6 @@ body{
 	color: #666666;
 	cursor: pointer;
 	background: none;
-	float: midd;
 	outline: none;
 	font-weight: 700;
 	font-family: 'Oxygen', sans-serif;
@@ -129,10 +125,6 @@ body{
 	-moz-transition: all 0.3s ease-out;
 	-ms-transition: all 0.3s ease-out;
 	-o-transition: all 0.3s ease-out;
-	border-left: 6px solid #fff;
-	border-bottom: none;
-	border-right: none;
-	border-top: none;
 }
 .vardas input[type="text"] {
 	padding: 15px;
