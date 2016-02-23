@@ -101,7 +101,7 @@
 		<div class="clear"> </div>	
       </div>
 
-		<form>
+		<form method='post' action='Registracija.php'>
 		   <div class="vardas">
 			   <div class="col_1_of_2 span_1_of_2">	<input type="text" class="text"  value= "<?php if(isset($_POST['php_vardas'])) echo  $_POST[php_vardas]; else print 'Vardas';?> " name ='php_vardas' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Vardas';}"></div>
 			   <div class="col_1_of_2 span_1_of_2">	<input type="text" class="text" value="<?php if(isset($_POST['php_pavarde'])) echo  $_POST[php_pavarde]; else print 'Pavardė';?> " name ='php_pavarde'onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Pavardė';}"></div>
