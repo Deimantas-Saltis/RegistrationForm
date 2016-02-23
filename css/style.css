@@ -75,7 +75,7 @@ body{
 }
 .tarpai{
 	word-spacing: 1em;
-	margin: 0px 150px;
+	margin: 0px 285px;
 }
 .main h3{
 	font-size: 1em;
@@ -91,10 +91,11 @@ body{
 }
 .gdata input[type="text"] {
     padding: 4px;
-    width: 98%;
+    width: 67%;
     font-size: 2em;
     text-align: center;
     margin: 20px 0px;
+	margin-left: 90px;
     border: none;
     color: #666666;
     cursor: pointer;
@@ -108,35 +109,43 @@ body{
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
 }
-.mygtukas input[type="text"] { 
-	padding: 4px;
-	width: 97%;
-	font-size: 1em;
-	margin: 10px 0px;
-	border:none;
-	color: #666666;
-	cursor: pointer;
-	background: none;
-	outline: none;
-	font-weight: 700;
-	font-family: 'Oxygen', sans-serif;
-	background: #ffffff;
+.mygtukasREG{
+	width: 68%;
+	margin-left: 81px;
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
 	-ms-transition: all 0.3s ease-out;
 	-o-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	border-left: 6px solid #fff;
+}
+.mygtukasPRIS{
+	width: 68%;
+	margin-left: 81px;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	border-left: 6px solid #fff;
 }
 .vardas input[type="text"] {
 	padding: 15px;
 	font-size: 1.1em;
 	margin: 18px 0px;
 	color: #666666;
-	width:87%;
+	width:57%;
 	cursor: pointer;
 	font-family: 'Oxygen', sans-serif;
 	outline: none;
 	font-weight: 600;
-	margin-left: 3px;
+	margin-left: 90px;
 	background: #FFFFFF;
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
@@ -147,17 +156,42 @@ body{
 	border-right: none;
 	border-top: none;
 }
+.prisijungimas input[type="password"], input[type="text"] {
+	padding: 15px;
+	font-size: 1.1em;
+	margin: 18px 0px;
+	color: #666666;
+	width: 50%;
+	cursor: pointer;
+	margin-left: 140px;
+	font-family: 'Oxygen', sans-serif;
+	outline: none;
+	font-weight: 600;
+	background: #FFFFFF;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	border-left: 6px solid #fff;
+	border-bottom: none;
+	border-right: none;
+	border-top: none;
+}
+.prisijungimas input[type="text"]:hover, input[type="text"]:hover,#active {
+	color:#DCDCDC;
+	border-left:6px solid#40A46F;
+}
 .slaptazodis input[type="password"] {
 	padding: 15px;
 	font-size: 1.1em;
 	margin: 18px 0px;
 	color: #666666;
-	width:87%;
+	width:57%;
 	cursor: pointer;
 	font-family: 'Oxygen', sans-serif;
 	outline: none;
 	font-weight: 600;
-	margin-left: 3px;
+	margin-left: 90px;
 	background: #FFFFFF;
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
@@ -172,11 +206,16 @@ body{
 	color:#DCDCDC;
 	border-left:6px solid#40A46F;
 }
+.elpastui input[type="text"]:hover, input[type="text"]:hover,#active {
+	color:#DCDCDC;
+	border-left:6px solid#40A46F;
+}
 .elpastui input[type="text"] { 
 	padding: 14px;
-	width: 94%;
+	width: 64%;
 	font-size: 1em;
 	margin: 18px 0px;
+	margin-left: 90px;
 	border:none;
 	color: #666666;
 	cursor: pointer;
@@ -247,7 +286,7 @@ input[type=submit] {
 	margin-left: 0;
 }
 .span_1_of_2 {
-	width:49.7%;
+	width:40%;
 }
 .col_1_of_2 {
 	display: block;
@@ -258,7 +297,7 @@ input[type=submit] {
 	margin-left: 0;
 }
 .span_1_of_f {
-	width:49.7%;
+	width: 20%;
 }
 .col_1_of_f {
 	display: block;
@@ -270,13 +309,13 @@ input[type=submit] {
 	margin: 0 0 0 3.6%;
 }
 .span_1_of_2 {
-	width: 47.7%;
+	width: 20%;
 }
 .span_1_of_f {
-	width: 50%;
+	width: 20%;
 }
 .main {
-	width: 50%;
+	width: 20%;
 }
 }
 @media (max-width:800px){
@@ -287,12 +326,12 @@ input[type=submit] {
 	float:none;
 }
 .span_1_of_2 {
-	width: 100%;
+	width: 20%;
 }
 .col_1_of_2 {
 	margin:0;
 }
-.elpastui input[type="text"] {
+.prisijungimas input[type="text"] {
 	padding: 14px;
 	width: 89%;
 }
@@ -312,6 +351,9 @@ width:70%;
 }
 .elpastui input[type="text"] {
 	width: 83%;
+}
+.prisijungimas input[type="text"] {
+	width: 50%;
 }
 }
 
