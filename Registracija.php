@@ -122,7 +122,7 @@
 				<input type="text" class="text" value="<?php if(isset($_POST['php_telefonas'])) echo  $_POST[php_telefonas]; else print 'Telefono numeris (86XXXXXXX)';?>"  name ='php_telefonas' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefono numeris (86XXXXXXX)';}">
 		   </div>
 
-
+			<form style="margin-top: 1em;">
 				<div id="radioset" class="tarpai">
 					<input type="radio" id="radio1" name="radio" value ="Vyras">
 					<label for="radio1">Vyras</label>
@@ -130,7 +130,7 @@
 					<input type="radio" id="radio2" name="radio" value ="Moteris">
 					<label for="radio2">Moteris</label>
 				</div>
-
+			</form>
 
 			<div class="gdata">
 			<input id="datepicker" type="text" size="63">
