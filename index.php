@@ -1,6 +1,62 @@
 
-<html lang="lt">
+<?php
+$v_status = false;
+$m_status = false;
 
+
+if(isset($_POST["php_submitas"]))
+{
+
+
+
+	$vartotojo_vardas = $_POST['php_vardas'];
+
+	$vartotojo_pavarde = $_POST['php_pavarde'];
+
+	$vartotojo_elpastas = $_POST['php_pastas'];
+
+	$vartotojo_slaptazodis1 = $_POST['php_password1'];
+
+	$vartotojo_slaptazodis2 = $_POST['php_password2'];
+
+	$vartotojo_telefonas = $_POST['php_telefonas'];
+
+	$vartotojo_lytis = $_POST['radio'];
+
+	$vartotojo_gimimoData =  $_POST['php_data'];
+
+
+
+
+
+// UŽDEDAMOS LYIES VELIAVELĖS
+
+	if ($vartotojo_lytis == 'Vyras') {
+
+		$v_status = true;
+		$m_status = false;
+
+	}
+	else if ($vartotojo_lytis == 'moteris') {
+
+		$m_status = true;
+		$v_status = false;
+
+	}
+
+
+
+
+
+	Duomenu_sutikrinimas($vartotojo_vardas,$vartotojo_pavarde,$vartotojo_elpastas,$vartotojo_slaptazodis1,	$vartotojo_slaptazodis2,$vartotojo_telefonas, $vartotojo_gimimoData, $v_status,$m_status);
+	Duomenu_siuntimas_i_duombaze($vartotojo_vardas,$vartotojo_pavarde,$vartotojo_elpastas,$vartotojo_slaptazodis1,	$vartotojo_slaptazodis2,$vartotojo_telefonas, $vartotojo_gimimoData, $vartotojo_lytis);
+
+
+
+
+}
+
+?>
 
 
 <?php
@@ -75,8 +131,8 @@ function Duomenu_siuntimas_i_duombaze($vartotojo_vardas,$vartotojo_pavarde,$vart
 
 
 
-//ŠITOJE VIETOJE REIKIA PARAŠYTI PRISIJUNGIMĄ PRIE DUOMENŲ BAZĖS 
-// Į DUOMBAZĘ REIKIA SIŲSTI ŠIOS FUNKCIJOS PARAMETRUS, TIKRINIMO AR SIUNČIAMI GERI DUOMENYS JAU NEREIKIA NES AŠ ESU TAI PADARĘS KITOJE FUUNKCIJOJE 
+//ŠITOJE VIETOJE REIKIA PARAŠYTI PRISIJUNGIMĄ PRIE DUOMENŲ BAZĖS
+// Į DUOMBAZĘ REIKIA SIŲSTI ŠIOS FUNKCIJOS PARAMETRUS, TIKRINIMO AR SIUNČIAMI GERI DUOMENYS JAU NEREIKIA NES AŠ ESU TAI PADARĘS KITOJE FUUNKCIJOJE
 // BEST REGARDS, EDVINAS :*
 
 //-------------------------------------
@@ -86,6 +142,12 @@ function Duomenu_siuntimas_i_duombaze($vartotojo_vardas,$vartotojo_pavarde,$vart
 }
 
 ?>
+
+
+
+<html lang="lt">
+
+
 
 
 
@@ -143,7 +205,7 @@ function Duomenu_siuntimas_i_duombaze($vartotojo_vardas,$vartotojo_pavarde,$vart
 		</div>
 
 		<br><br>
-		<input type="submit"  name='php_submitas' onclick="myFunction()" value="Registruotis"  >
+		<input type="submit"  name="php_submitas" onclick="myFunction()" value="Registruotis"  >
 
 
 		<script>
@@ -157,61 +219,3 @@ function Duomenu_siuntimas_i_duombaze($vartotojo_vardas,$vartotojo_pavarde,$vart
 </div>
 </body>
 </html>
-
-
-<?php
-$v_status = false;
-$m_status = false;
-
-if(isset($_POST['php_submitas']))
-{
-
-
-	$vartotojo_vardas = $_POST['php_vardas'];
-
-	$vartotojo_pavarde = $_POST['php_pavarde'];
-
-	$vartotojo_elpastas = $_POST['php_pastas'];
-
-	$vartotojo_slaptazodis1 = $_POST['php_password1'];
-
-	$vartotojo_slaptazodis2 = $_POST['php_password2'];
-
-	$vartotojo_telefonas = $_POST['php_telefonas'];
-
-	$vartotojo_lytis = $_POST['radio'];
-
-	$vartotojo_gimimoData =  $_POST['php_data'];
-
-
-
-
-
-// UŽDEDAMOS LYIES VELIAVELĖS
-
-	if ($vartotojo_lytis == 'Vyras') {
-
-		$v_status = true;
-		$m_status = false;
-
-	}
-	else if ($vartotojo_lytis == 'moteris') {
-
-		$m_status = true;
-		$v_status = false;
-
-	}
-
-
-
-
-
-	Duomenu_sutikrinimas($vartotojo_vardas,$vartotojo_pavarde,$vartotojo_elpastas,$vartotojo_slaptazodis1,	$vartotojo_slaptazodis2,$vartotojo_telefonas, $vartotojo_gimimoData, $v_status,$m_status);
-	Duomenu_siuntimas_i_duombaze($vartotojo_vardas,$vartotojo_pavarde,$vartotojo_elpastas,$vartotojo_slaptazodis1,	$vartotojo_slaptazodis2,$vartotojo_telefonas, $vartotojo_gimimoData, $vartotojo_lytis);
-
-
-
-
-}
-
-?>
