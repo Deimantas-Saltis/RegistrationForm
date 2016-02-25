@@ -38,6 +38,12 @@ audio:not([controls]) {
   display: none;
   height: 0;
 }
+.aukstis{
+  margin:15em auto 0;
+}
+.tarpaiButonam{
+  width:50%;
+}
 [hidden],
 template {
   display: none;
@@ -3063,6 +3069,7 @@ fieldset[disabled] a.btn {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
+
 }
 .btn-default:focus,
 .btn-default.focus {
