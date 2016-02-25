@@ -4,67 +4,92 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="jquery-ui-1.11.4/external/jquery/jquery.js"></script>
 <script src="jquery-ui-1.11.4/jquery-ui.js"></script>
 
+<script src="js/bootstrap.min.js"></script>
+
+
 </head>
-<body>
+    <body>
+    <form class="text-center aukstis">
 
-<div class="main">
-	<div>
-      </div>
+        <!--Vardas-->
+        <div class="form-group col-lg-4 col-lg-offset-4">
+            <label for="vardas" class="col-sm-2 control-label">Vardas: </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="vardas" placeholder="Vardas">
+                </div>
+        </div>
 
-		<form>
-		   <div class="vardas">
-		        <div class="col_1_of_2 span_1_of_2">	<input type="text" class="text" value="Vardas" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Vardas';}"></div>
-                <div class="col_1_of_2 span_1_of_2">	<input type="text" class="text" value="Pavardė" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Pavardė';}"></div>
-                <div class="clear"> </div>
-		   </div>
-		   
-		   <div class="elpastui">
-		        <input type="text" class="text" value="e-mail@stud.vgtu.lt" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'e-mail@stud.vgtu.lt';}">
-		   </div>
-		   
-		   <div class="slaptazodis">
-		        <div class="col_1_of_2 span_1_of_2">	<input type="password" class="text" value="slaptazodis" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"></div>
-                <div class="col_1_of_2 span_1_of_2">	<input type="password" class="text" value="slaptazodis" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"></div>
-				<div class="clear"> </div>
-		   </div>
-		   
-		    <div class="elpastui">
-		        <input type="text" class="text" value="Telefono numeris " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telefono numeris';}">
-		   </div>
+        <!--Pavarde-->
+        <div class="form-group col-lg-4 col-lg-offset-4 tarpaiTarpLauku">
+            <label for="pavarde" class="col-sm-2 control-label">Pavardė: </label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="pavarde" placeholder="Pavardė">
+            </div>
+        </div>
 
-			<form style="margin-top: 1em;">
-				<div id="radioset" class="tarpai">
-					<input type="radio" id="radio1" name="radio">
-					<label for="radio1">Vyras</label>
+        <!--Emailas-->
+        <div class="form-group col-lg-4 col-lg-offset-4 tarpaiTarpLauku">
+            <label for="emailas" class="col-sm-2 control-label">El-paštas:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="emailas" placeholder="E-mailas">
+            </div>
+        </div>
 
-					<input type="radio" id="radio2" name="radio">
-					<label for="radio2">Moteris</label>
-				</div>
-			</form>
+        <!--Slaptazodis-->
+        <div class="form-group col-lg-4 col-lg-offset-4 form-inline tarpaiTarpLauku">
+            <label for="slaptazodis1" class="col-sm-2 control-label">Slaptažodis:</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" style="width: 237px;" id="slaptazodis1" placeholder="Slaptažodis">
+                <input type="password" class="form-control" style="width: 237px;" id="slaptazodis2" placeholder="Slaptažodis">
+            </div>
+        </div>
 
-			<div class="gdata">
-			<input id="datepicker" type="text">
-			</div>
+        <!--Telefono numeris-->
+        <div class="form-group col-lg-4 col-lg-offset-4 tarpaiTarpLauku">
+            <label for="telnumeris" class="col-sm-2 control-label">Telefonas:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="telnumeris" placeholder="Telefono numeris">
+            </div>
+        </div>
 
-				<br><br>
-				<div class="mygtukasREG">
-				<input type="submit" onclick="registracija()" value="Registruotis" >
-				</div>
 
-			<script>
-				$( "#radioset" ).buttonset();
-				$( "#datepicker" ).datepicker({
-					inline: true
-				});
-			</script>
 
-		</form>
-</div>
+        <!--Gimimo data-->
+        <div class="form-group col-lg-4 col-lg-offset-4 tarpaiTarpLauku">
+            <label class="col-sm-2 control-label">Data:</label>
+            <div class="col-sm-10">
+                <input id="datepicker" type="text" class="form-control" placeholder="Gimimo data">
+            </div>
+        </div>
 
-</body>
+    <script>
+        $( "#radioset" ).buttonset();
+        $( "#datepicker" ).datepicker({
+            inline: true
+        });
+    </script>
+
+        <!--Lytis-->
+        <div class="form-group col-lg-4 col-lg-offset-4 ">
+                <label class="col-sm-2 control-label">Lytis:</label>
+                <div class ="col-sm-10">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default">Vyras</button>
+                        <button type="button" class="btn btn-default">Moteris</button>
+                    </div>
+                </div>
+        </div>
+
+        <!--Mygtukas(Registrutis)-->
+        <div class="col-lg-4 col-lg-offset-4 tarpaiTarpLauku kaireLygiuote">
+            <button type="submit" class="btn btn-primary">Registruotis</button>
+        </div>
+
+    </form>
+    </body>
 </html>
