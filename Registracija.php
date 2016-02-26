@@ -1,12 +1,8 @@
-<?php
 
-
-
-?>
 
 
     <!DOCTYPE html>
-    <html>
+    <html lang="lt">
     <head>
 
         <meta charset="utf-8">
@@ -86,8 +82,8 @@
             <label class="col-sm-2 control-label">Lytis:</label>
             <div class ="col-sm-10">
                 <div class="btn-group">
-                    <button type="button" name="php_lytis_vyr" class="btn btn-default">Vyras</button>
-                    <button type="button" name="php_lytis_mot"class="btn btn-default">Moteris</button>
+                    <button type="submit" name="php_lytis1"  value="Vyras" class="btn btn-default">Vyras</button>
+                    <button type="submit" name="php_lytis2" value="Moteris" class="btn btn-default">Moteris</button>
                 </div>
             </div>
         </div>
@@ -114,8 +110,10 @@ if(isset($_POST["Php_registruoti"])) {
     $telefonas=$_POST["Php_telefonas"];
     $pastas=$_POST["Php_pastas"];
 
-    if(isset($_POST["php_lytis_vyr"])) $lytis="Vyras";
-    else if(isset($_POST["php_lytis_mot"])) $lytis="Moteris";
+// Sitoje vietoje neateina pranesimas is buttonu, buvo tikrinta 100 kartu
+if (isset($_POST["php_lytis1"]))  $lytis="Vyras";
+    else if ((isset($_POST["php_lytis2"])))   $lytis="Moteris";
+            else $lytis="NULL";
 
     require_once("Funkcijos.php");
     Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);

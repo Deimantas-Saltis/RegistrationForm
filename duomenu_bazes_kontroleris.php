@@ -1,4 +1,6 @@
 <?php
+
+error_reporting(E_ALL ^ E_DEPRECATED);
 class DB_Kontroleris {
 	private $host = "localhost";
 	private $user = "root";
@@ -13,12 +15,13 @@ class DB_Kontroleris {
 	}
 
 	function connectDB() {
-		$conn = mysql_connect($this->host,$this->user,$this->password);
+		$conn = mysql_connect($this->host,$this->user,$this->password, $this->database);
+		mysql_set_charset('utf8', $conn);
 		return $conn;
 	}
 
 	function selectDB($conn) {
-		mysql_select_db($this->database,$conn);
+		mysql_select_db($this->database,$conn) or die(mysql_error());
 	}
 
 	function runQuery($query) {
