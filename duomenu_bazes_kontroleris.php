@@ -3,7 +3,7 @@ class DB_Kontroleris {
 	private $host = "localhost";
 	private $user = "root";
 	private $password = "";
-	private $database = "phppot_examples";
+	private $database = "registracijos_forma";
 
 	function __construct() {
 		$conn = $this->connectDB();
