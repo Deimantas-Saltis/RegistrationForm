@@ -1,6 +1,3 @@
-
-
-
     <!DOCTYPE html>
     <html lang="lt">
     <head>
@@ -9,11 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet">
         <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" href="css/datepicker.css"/>
         <script src="jquery-ui-1.11.4/external/jquery/jquery.js"></script>
         <script src="jquery-ui-1.11.4/jquery-ui.js"></script>
-
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
 
+        <script>
+            $(function(){
+                $('.datepicker').datepicker({
+                    format: 'yyyy-mm-dd'
+                });
+            });
+        </script>
 
     </head>
     <body>
@@ -61,21 +66,13 @@
         </div>
 
 
-
         <!--Gimimo data-->
         <div class="form-group col-lg-4 col-lg-offset-4 tarpaiTarpLauku">
             <label class="col-sm-2 control-label">Data:</label>
             <div class="col-sm-10">
-                <input id="datepicker" type="text"  name="Php_data" value="<?php if(isset($_POST["Php_data"])) echo $_POST["Php_data"]; ?>" class="form-control" placeholder="Gimimo data">
+                <input id="datepicker" type="text"  name="Php_data" value="<?php if(isset($_POST["Php_data"])) echo $_POST["Php_data"]; ?>" class="form-control datepicker" placeholder="Gimimo data">
             </div>
         </div>
-
-        <script>
-            $( "#radioset" ).buttonset();
-            $( "#datepicker" ).datepicker({
-                inline: true
-            });
-        </script>
 
         <!--Lytis-->
         <div class="form-group col-lg-4 col-lg-offset-4 ">
