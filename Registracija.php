@@ -20,8 +20,15 @@
             });
         </script>
 
-    </head>
-    <body>
+</head>
+<body class="bgSpalva">
+
+
+    <div class="navbar navbar-inverse navbar-fixed-bottom navbar-inner container-fluid"></div>
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-inner container-fluid"></div>
+
+
+
     <form class="text-center aukstis" method="post">
 
         <!--Vardas-->

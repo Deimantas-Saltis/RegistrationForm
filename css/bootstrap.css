@@ -41,6 +41,9 @@ audio:not([controls]) {
 .aukstis{
   margin:15em auto 0;
 }
+.bgSpalva{
+  background-color: #D8D8D8;
+}
 .tarpaiTarpLauku{
     margin:1em auto 0;
 }
