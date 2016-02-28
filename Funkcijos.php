@@ -34,4 +34,48 @@ function Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefo
 
 	return $message;
 }
+
+function Patikrinti_Ar_vartotojas_Egzistuoja($pastas, $slaptazodis){
+	$Ar_egzistuoja=false;
+
+	require_once("duomenu_bazes_kontroleris.php");
+	$db_objektas = new DB_Kontroleris();
+
+	$Patikrinimo_Salyga ="SELECT * FROM registracijos_forma WHERE 	E_mail='$pastas' AND Slaptazodis='".md5($slaptazodis)."'";
+	$Tarpinis = $db_objektas->numRows($Patikrinimo_Salyga);
+
+	if($Tarpinis==1)
+	{
+		$Ar_egzistuoja=true;
+	}
+
+	else
+	{
+		$Ar_egzistuoja = false;
+	}
+
+
+	return $Ar_egzistuoja;
+}
+
+
+function Grazinti_Prisijungusio_Asmens_Duomenis($ID){
+	require_once("duomenu_bazes_kontroleris.php");
+	$db_objektas = new DB_Kontroleris();
+	$uzklausa="SELECT * FROM registracijos_forma WHERE 	ID='$ID'";
+	$Duomenys=$db_objektas->runQuery($uzklausa);
+
+	return $Duomenys;
+}
+
+
+function Gauti_Vartotojo_ID($pastas, $slaptazodis)
+{
+	require_once("duomenu_bazes_kontroleris.php");
+	$db_objektas = new DB_Kontroleris();
+	$uzklausa="SELECT ID FROM registracijos_forma WHERE 	E_mail='$pastas' AND Slaptazodis='".md5($slaptazodis)."'";
+	$ID=$db_objektas->runQuery($uzklausa);
+
+	return $ID;
+}
 ?>
