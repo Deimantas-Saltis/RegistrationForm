@@ -1,4 +1,35 @@
     <!DOCTYPE html>
+    <?php
+
+    if(isset($_POST["Php_registruoti"])) {
+
+        $vardas=$_POST["Php_vardas"];
+        $pavarde=$_POST["Php_pavarde"];
+        $slapt1=$_POST["Php_slapt1"];
+        $slapt2=$_POST["Php_slapt2"];
+        $data=$_POST["Php_data"];
+        $telefonas=$_POST["Php_telefonas"];
+        $pastas=$_POST["Php_pastas"];
+
+// Sitoje vietoje neateina pranesimas is buttonu, buvo tikrinta 100 kartu
+        if (isset($_POST["php_lytis1"]))  $lytis="Vyras";
+        else if ((isset($_POST["php_lytis2"])))   $lytis="Moteris";
+        else $lytis="NULL";
+
+        require_once("Funkcijos.php");
+        $pranesimas= Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
+
+        echo "<script>alert('$pranesimas')  </script> ";
+
+
+        if($pranesimas=="Sėkmingai prisiregistravote!") {
+            header("Location: Prisijungimas.php");
+            exit;
+
+        }
+    }
+
+    ?>
     <html lang="lt">
     <head>
 
@@ -102,27 +133,3 @@
     </html>
 
 
-<?php
-
-if(isset($_POST["Php_registruoti"])) {
-
-    $vardas=$_POST["Php_vardas"];
-    $pavarde=$_POST["Php_pavarde"];
-    $slapt1=$_POST["Php_slapt1"];
-    $slapt2=$_POST["Php_slapt2"];
-    $data=$_POST["Php_data"];
-    $telefonas=$_POST["Php_telefonas"];
-    $pastas=$_POST["Php_pastas"];
-
-// Sitoje vietoje neateina pranesimas is buttonu, buvo tikrinta 100 kartu
-if (isset($_POST["php_lytis1"]))  $lytis="Vyras";
-    else if ((isset($_POST["php_lytis2"])))   $lytis="Moteris";
-            else $lytis="NULL";
-
-    require_once("Funkcijos.php");
-   $pranesimas= Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
-
-    echo "<script>alert('$pranesimas')  </script> ";
-}
-
-?>
