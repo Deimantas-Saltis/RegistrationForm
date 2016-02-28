@@ -78,4 +78,18 @@ function Gauti_Vartotojo_ID($pastas, $slaptazodis)
 
 	return $ID;
 }
+
+function Gauti_Visus_Vartotojus() {
+	require_once("duomenu_bazes_kontroleris.php");
+    $db_objektas = new DB_Kontroleris();
+    $query = "SELECT * FROM registracijos_forma";
+    $duomenys = $db_objektas->insertQuery($query);
+        
+    if (!$duomenys) {
+    	$message  = 'Invalid query: ' . mysql_error() . "\n";
+    	$message .= 'Whole query: ' . $query;
+    	die($message);
+    }
+    return $duomenys;
+}
 ?>
