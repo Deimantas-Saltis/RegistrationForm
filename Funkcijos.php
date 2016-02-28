@@ -92,4 +92,20 @@ function Gauti_Visus_Vartotojus() {
     }
     return $duomenys;
 }
+
+function Gauti_Vartotojo_Duomenus_pagal_ID($ID)
+{
+	require_once("duomenu_bazes_kontroleris.php");
+	$db_objektas = new DB_Kontroleris();
+	$query = "SELECT * FROM registracijos_forma WHERE ID='$ID'";
+	$duomenys = $db_objektas->insertQuery($query);
+
+	if (!$duomenys) {
+		$message  = 'Invalid query: ' . mysql_error() . "\n";
+		$message .= 'Whole query: ' . $query;
+		die($message);
+	}
+	return $duomenys;
+
+}
 ?>
