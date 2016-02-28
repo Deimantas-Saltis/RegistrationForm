@@ -1,104 +1,109 @@
-<?php
 
-$vardas ="";
-$pavarde ="";
-$pastas ="";
-$slapt1 ="";
-$slapt2 = "";
-$telefonas ="";
-$data ="";
+   <?php
+   $nameError = "";
+   $lastnameError = "";
+   $emailError = "";
+   $passError = "";
+   $pass2Error = "";
+   $phoneError = "";
+   $birthError = "";
+
+     if(isset($_POST["Php_registruoti"])) {
+
+         $vardas = $_POST["Php_vardas"];
+         $pavarde = $_POST["Php_pavarde"];
+         $slapt1 = $_POST["Php_slapt1"];
+         $slapt2 = $_POST["Php_slapt2"];
+         $data = $_POST["Php_data"];
+         $telefonas = $_POST["Php_telefonas"];
+         $pastas = $_POST["Php_pastas"];
+         // Sitoje vietoje neateina pranesimas is buttonu, buvo tikrinta 100 kartu+        if (isset($_POST["php_lytis1"]))  $lytis="Vyras";
+
+         if ((isset($_POST["php_lytis2"]))) $lytis = "Moteris";
+         else $lytis = "NULL";
+
+
+
+
 //$button = "";
 
-$nameError ="";
-$lastnameError ="";
-$emailError ="";
-$passError ="";
-$pass2Error = "";
-$phoneError ="";
-$birthError ="";
+
 //$buttonError = "";
 
 
-if(isset($_POST["Php_registruoti"])) {
-
-    $vardas = $_POST["Php_vardas"];
-    $pavarde = $_POST["Php_pavarde"];
-    $pastas = $_POST["Php_pastas"];
-    $slapt1 = $_POST["Php_slapt1"];
-    $slapt2 = $_POST["Php_slapt2"];
-    $telefonas = $_POST["Php_telefonas"];
-    $data = $_POST["Php_data"];
 //    $button = $_POST["Php_lytis"];
 
-    if ($vardas=="" or $vardas=="Vardas")
-    {
-        $nameError = "Įveskite vardą";
-    }
+         if ($vardas == "" or $vardas == "Vardas") {
+             $nameError = "Įveskite vardą";
+         }
 
-    if (!preg_match("/^[a-zA-Z ]*$/",$vardas))
-    {
-        $nameError = "Leidžiamos tik raidės ir tarpas";
-    }
+         if (!preg_match("/^[a-zA-Z ]*$/", $vardas)) {
+             $nameError = "Leidžiamos tik raidės ir tarpas";
+         }
 
-    if ($pavarde=="" or $pavarde=="Pavardė")
-    {
-        $lastnameError = "Įveskite pavardę";
-    }
+        if ($pavarde == "" or $pavarde == "Pavardė") {
+             $lastnameError = "Įveskite pavardę";
+         }
 
-    if (!preg_match("/^[a-zA-Z ]*$/",$pavarde))
-    {
-        $lastnameError = "Leidžiamos tik raidės ir tarpas";
-    }
+         if (!preg_match("/^[a-zA-Z ]*$/", $pavarde)) {
+             $lastnameError = "Leidžiamos tik raidės ir tarpas";
+         }
 
-    if(!filter_var($_POST["Php_pastas"], FILTER_VALIDATE_EMAIL))
-    {
-        $emailError = "Netinkamas e-mail";
-    }
+        if (!filter_var($_POST["Php_pastas"], FILTER_VALIDATE_EMAIL)) {
+             $emailError = "Netinkamas e-mail";
+         }
 
-    if ($pastas=="" or $pastas=="E-mailas")
-    {
-        $emailError = "Įveskite e-mail";
-    }
+        if ($pastas == "" or $pastas == "E-mailas") {
+             $emailError = "Įveskite e-mail";
+         }
 
-    if ($slapt1=="" or $slapt1=="Slaptažodis")
-    {
-        $passError = "Įveskite slaptažodį";
-    }
+        if ($slapt1 == "" or $slapt1 == "Slaptažodis") {
+             $passError = "Įveskite slaptažodį";
+         }
 
-    if(strlen($slapt1) < 5)
-    {
-        $passError = "Slaptažodis per trumpas";
-    }
+        if (strlen($slapt1) < 5) {
+             $passError = "Slaptažodis per trumpas";
+         }
 
-    if ($slapt2=="" or $slapt2=="Slaptažodis")
-    {
-        $pass2Error = "Pakartokite slaptažodį";
-    }
+       if ($slapt2 == "" or $slapt2 == "Slaptažodis") {
+             $pass2Error = "Pakartokite slaptažodį";
+         }
 
-    if(($slapt2 != $slapt1))
-    {
-        $pass2Error = "Slaptažodžiai nesutampa";
-    }
+       if (($slapt2 != $slapt1)) {
+             $pass2Error = "Slaptažodžiai nesutampa";
+         }
 
 
-    if(!is_numeric($telefonas) or strlen($telefonas)!= 9)
-    {
-        $phoneError = "Įveskite tinkamą telefono numerį";
-    }
+       if (!is_numeric($telefonas) or strlen($telefonas) != 9) {
+             $phoneError = "Įveskite tinkamą telefono numerį";
+         }
 
 
-    if ($data=="" or $data=="Gimimo data")
-    {
-        $birthError = "Įveskite gimimo datą";
-    }
+        if ($data == "" or $data == "Gimimo data") {
+             $birthError = "Įveskite gimimo datą";
+         }
 
 //    if (!isset($_POST["button"]))
 //    {
 //        $buttonError = "Pasirinkite lytį";
 //    }
 
-}
 
+
+
+       require_once("Funkcijos.php");
+       $pranesimas = Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
+
+      // echo "<script>alert('$pranesimas')  </script> ";
+
+
+       if ($pranesimas == "Sėkmingai prisiregistravote!") {
+           header("Location: Prisijungimas.php");
+           exit;
+
+       }
+
+     }
 ?>
 
     <!DOCTYPE html>
@@ -216,27 +221,3 @@ if(isset($_POST["Php_registruoti"])) {
     </html>
 
 
-<?php
-
-if(isset($_POST["Php_registruoti"])) {
-
-    $vardas=$_POST["Php_vardas"];
-    $pavarde=$_POST["Php_pavarde"];
-    $slapt1=$_POST["Php_slapt1"];
-    $slapt2=$_POST["Php_slapt2"];
-    $data=$_POST["Php_data"];
-    $telefonas=$_POST["Php_telefonas"];
-    $pastas=$_POST["Php_pastas"];
-
-// Sitoje vietoje neateina pranesimas is buttonu, buvo tikrinta 100 kartu
-    if (isset($_POST["php_lytis1"]))  $lytis="Vyras";
-    else if ((isset($_POST["php_lytis2"])))   $lytis="Moteris";
-    else $lytis="NULL";
-
-    require_once("Funkcijos.php");
-    $pranesimas= Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
-
-    echo "<script>alert('$pranesimas')  </script> ";
-}
-
-?>
