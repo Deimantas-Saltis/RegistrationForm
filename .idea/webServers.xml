@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="56e8fe04-2b01-4ae0-b108-9b94c0b4501a" name="apache_wamp" url="http://localhost">
-        <fileTransfer mountedRoot="C:\wamp\www" accessType="MOUNT" />
+      <webServer id="96759867-2c2d-4a4f-ac66-63d7a89c98ad" name="apache_wamp" url="http://localhost">
+        <fileTransfer mountedRoot="C:\wamp\bin\apache\apache2.4.9\htdocs" accessType="MOUNT" />
       </webServer>
     </option>
   </component>

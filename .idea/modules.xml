@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/RegistrationForm.iml" filepath="$PROJECT_DIR$/.idea/RegistrationForm.iml" />
+      <module fileurl="file://C:/wamp/www/RegistrationForm/.idea/RegistrationForm.iml" filepath="C:/wamp/www/RegistrationForm/.idea/RegistrationForm.iml" />
     </modules>
   </component>
 </project>
