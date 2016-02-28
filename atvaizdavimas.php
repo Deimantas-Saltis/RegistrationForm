@@ -1,25 +1,27 @@
 <html>
-    <meta charset="utf-8">
-    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <script src="js/bootstrap.min.js"></script>
-    
+
     <head>
-        <title>Prisiregistrave nariai</title>
+        <meta charset="utf-8">
+        <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+        <script src="js/bootstrap.min.js"></script>
+
     </head>
-    <body>
-        <form class="text-center aukstis">
-            <div class="form-group col-lg-4 col-lg-offset-4">
-            <table border="1">
-                <caption>Prisiregistrave nariai</caption>
+    <body class="bgSpalva">
+
+    <div class="navbar navbar-inverse navbar-fixed-bottom navbar-inner container-fluid"></div>
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-inner container-fluid"></div>
+
+    <form class="text-center aukstis">
+            <table class = "table">
             <thead>
-                <tr>
-                    <td>Vardas</td>
-                    <td>Pavarde</td>
-                    <td>Slaptazodis</td>
-                    <td>Gimimo metai</td>
-                    <td>Lytis</td>
-                    <td>Telefonas</td>
-                    <td>El. pastas</td>
+                <tr class="active">
+                    <th>Vardas</th>
+                    <th>Pavarde</th>
+                    <th>Slaptazodis</th>
+                    <th>Gimimo metai</th>
+                    <th>Lytis</th>
+                    <th>Telefonas</th>
+                    <th>El. pastas</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,7 +42,6 @@
                     <?php
                     }
                     ?>
-                </div>
             </tbody>
             </table>
             </form>

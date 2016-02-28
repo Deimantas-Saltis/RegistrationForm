@@ -21,7 +21,7 @@ if(isset($_POST["prisijungimo_mygtukas"]))
         {
             $_SESSION['duomenu_pasintimas'] =$Vartotojo_ID ;
         }
-        header("Location: Sveiki.php");
+        header("Location: atvaizdavimas.php");
         exit;
     }
 
