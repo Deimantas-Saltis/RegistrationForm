@@ -15,7 +15,7 @@ class DB_Kontroleris {
 	}
 
 	function connectDB() {
-		$conn = mysql_connect($this->host,$this->user,$this->password, $this->database);
+		$conn = mysql_connect($this->host,$this->user,$this->password, $this->database) or die(mysql_error());
 		mysql_set_charset('utf8', $conn);
 		return $conn;
 	}

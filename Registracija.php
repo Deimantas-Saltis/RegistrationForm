@@ -29,7 +29,7 @@
 
 
 
-    <form class="text-center aukstis" method="post">
+    <form class="text-center aukstis" method="post" >
 
         <!--Vardas-->
         <div class="form-group col-lg-4 col-lg-offset-4">
@@ -86,15 +86,15 @@
             <label class="col-sm-2 control-label">Lytis:</label>
             <div class ="col-sm-10">
                 <div class="btn-group">
-                    <button type="submit" name="php_lytis1"  value="Vyras" class="btn btn-default">Vyras</button>
-                    <button type="submit" name="php_lytis2" value="Moteris" class="btn btn-default">Moteris</button>
+                    <button type="button" name="php_lytis1"  value="Vyras" class="btn btn-default">Vyras</button>
+                    <button type="button" name="php_lytis2" value="Moteris" class="btn btn-default">Moteris</button>
                 </div>
             </div>
         </div>
 
         <!--Mygtukas(Registrutis)-->
-        <div class="col-lg-4 col-lg-offset-4 tarpaiTarpLauku kaireLygiuote">
-            <button type="submit"  name="Php_registruoti" class="btn btn-primary">Registruotis</button>
+        <div >    <!--class="col-lg-4 col-lg-offset-4 tarpaiTarpLauku kaireLygiuote"-->
+            <button type="submit"  name="Php_registruoti" class="btn btn-primary"> >Registruotis</button>
         </div>
 
     </form>
@@ -120,7 +120,9 @@ if (isset($_POST["php_lytis1"]))  $lytis="Vyras";
             else $lytis="NULL";
 
     require_once("Funkcijos.php");
-    Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
+   $pranesimas= Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
+
+    echo "<script>alert('$pranesimas')  </script> ";
 }
 
 ?>
