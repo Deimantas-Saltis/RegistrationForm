@@ -93,8 +93,8 @@
         </div>
 
         <!--Mygtukas(Registrutis)-->
-        <div >    <!--class="col-lg-4 col-lg-offset-4 tarpaiTarpLauku kaireLygiuote"-->
-            <button type="submit"  name="Php_registruoti" class="btn btn-primary"> >Registruotis</button>
+        <div class="col-lg-4 col-lg-offset-4 tarpaiTarpLauku kaireLygiuote">
+            <button type="submit"  name="Php_registruoti" class="btn btn-primary"> Registruotis</button>
         </div>
 
     </form>
