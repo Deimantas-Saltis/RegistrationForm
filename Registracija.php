@@ -23,8 +23,6 @@
          else $lytis = "NULL";
 
 
-
-
 //$button = "";
 
 
@@ -41,7 +39,7 @@
              $nameError = "Leidžiamos tik raidės ir tarpas";
          }
 
-        if ($pavarde == "" or $pavarde == "Pavardė") {
+         if ($pavarde == "" or $pavarde == "Pavardė") {
              $lastnameError = "Įveskite pavardę";
          }
 
@@ -49,37 +47,37 @@
              $lastnameError = "Leidžiamos tik raidės ir tarpas";
          }
 
-        if (!filter_var($_POST["Php_pastas"], FILTER_VALIDATE_EMAIL)) {
+         if (!filter_var($_POST["Php_pastas"], FILTER_VALIDATE_EMAIL)) {
              $emailError = "Netinkamas e-mail";
          }
 
-        if ($pastas == "" or $pastas == "E-mailas") {
+         if ($pastas == "" or $pastas == "E-mailas") {
              $emailError = "Įveskite e-mail";
          }
 
-        if ($slapt1 == "" or $slapt1 == "Slaptažodis") {
+         if ($slapt1 == "" or $slapt1 == "Slaptažodis") {
              $passError = "Įveskite slaptažodį";
          }
 
-        if (strlen($slapt1) < 5) {
+         if (strlen($slapt1) < 5) {
              $passError = "Slaptažodis per trumpas";
          }
 
-       if ($slapt2 == "" or $slapt2 == "Slaptažodis") {
+         if ($slapt2 == "" or $slapt2 == "Slaptažodis") {
              $pass2Error = "Pakartokite slaptažodį";
          }
 
-       if (($slapt2 != $slapt1)) {
+         if (($slapt2 != $slapt1)) {
              $pass2Error = "Slaptažodžiai nesutampa";
          }
 
 
-       if (!is_numeric($telefonas) or strlen($telefonas) != 9) {
+         if (!is_numeric($telefonas) or strlen($telefonas) != 9) {
              $phoneError = "Įveskite tinkamą telefono numerį";
          }
 
 
-        if ($data == "" or $data == "Gimimo data") {
+         if ($data == "" or $data == "Gimimo data") {
              $birthError = "Įveskite gimimo datą";
          }
 
@@ -89,20 +87,21 @@
 //    }
 
 
+         require_once("Funkcijos.php");
+         $ar_galina_ivesti = Sutikrinti_Ivedamus_Duomenis_Pries_registrujant($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
+         if ($ar_galina_ivesti) {
+             $pranesimas = Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
+
+             // echo "<script>alert('$pranesimas')  </script> ";
 
 
-       require_once("Funkcijos.php");
-       $pranesimas = Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
+             if ($pranesimas == "Sėkmingai prisiregistravote!") {
+                 header("Location: Prisijungimas.php");
+                 exit;
 
-      // echo "<script>alert('$pranesimas')  </script> ";
+             }
 
-
-       if ($pranesimas == "Sėkmingai prisiregistravote!") {
-           header("Location: Prisijungimas.php");
-           exit;
-
-       }
-
+         }
      }
 ?>
 

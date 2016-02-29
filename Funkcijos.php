@@ -108,4 +108,35 @@ function Gauti_Vartotojo_Duomenus_pagal_ID($ID)
 	return $duomenys;
 
 }
+
+
+function Sutikrinti_Ivedamus_Duomenis_Pries_registrujant($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas){
+
+
+	if($vardas == "" or $vardas == "Vardas" or !preg_match("/^[a-zA-Z ]*$/", $vardas) ) $ar_teisingi_duoemnys=false;
+	else $ar_teisingi_duoemnys=true;
+
+	if( $pavarde == "" or $pavarde == "Pavardė" or !preg_match("/^[a-zA-Z ]*$/", $pavarde)) $ar_teisingi_duoemnys=false;
+	else $ar_teisingi_duoemnys=true;
+
+	if(!filter_var($pastas, FILTER_VALIDATE_EMAIL) or($pastas == "" or $pastas == "E-mailas") ) $ar_teisingi_duoemnys=false;
+	else $ar_teisingi_duoemnys=true;
+
+	if($slapt1 == "" or $slapt1 == "Slaptažodis") $ar_teisingi_duoemnys=false;
+	else $ar_teisingi_duoemnys=true;
+
+	if(strlen($slapt1) < 5) $ar_teisingi_duoemnys=false;
+	else $ar_teisingi_duoemnys=true;
+
+	if($slapt2 != $slapt1) $ar_teisingi_duoemnys=false;
+	else $ar_teisingi_duoemnys=true;
+
+	if(!is_numeric($telefonas) or strlen($telefonas) != 9) $ar_teisingi_duoemnys=false;
+	else $ar_teisingi_duoemnys=true;
+
+	if($data == "" or $data == "Gimimo data") $ar_teisingi_duoemnys=false;
+	else $ar_teisingi_duoemnys=true;
+
+	return $ar_teisingi_duoemnys;
+}
 ?>
