@@ -9,28 +9,31 @@ session_start();
 if(isset($_POST["prisijungimo_mygtukas"]))
 
 {
-
-    require_once("Funkcijos.php");
-    $salyga=Patikrinti_Ar_vartotojas_Egzistuoja($_POST["pastas"],$_POST["slaptazodis"]);
-
-    if($salyga)
-    {
-        require_once("Funkcijos.php");
-        $Vartotojo_ID=Gauti_Vartotojo_ID($_POST["pastas"],$_POST["slaptazodis"]);
-        if(!isset($_SESSION['duomenu_pasintimas']))
-        {
-            $_SESSION['duomenu_pasintimas'] =$Vartotojo_ID ;
-        }
-        header("Location: Sveiki.php");
-        exit;
-    }
-
-
-
-    else echo "<script>alert('Neteisingas el. paštas arba slaptažodis!')  </script> ";
-
-
+if($_POST["pastas"] =='admin@admin.com' AND $_POST["slaptazodis"]=='admin' )
+{
+    header("Location: atvaizdavimas.php");
+    exit;
 }
+
+    else {
+
+
+        require_once("Funkcijos.php");
+        $salyga = Patikrinti_Ar_vartotojas_Egzistuoja($_POST["pastas"], $_POST["slaptazodis"]);
+
+        if ($salyga) {
+            require_once("Funkcijos.php");
+            $Vartotojo_ID = Gauti_Vartotojo_ID($_POST["pastas"], $_POST["slaptazodis"]);
+            if (!isset($_SESSION['duomenu_pasintimas'])) {
+                $_SESSION['duomenu_pasintimas'] = $Vartotojo_ID;
+            }
+            header("Location: Sveiki.php");
+            exit;
+        } else echo "<script>alert('Neteisingas el. paštas arba slaptažodis!')  </script> ";
+
+    }
+}
+
 if(isset($_POST["registracijos_mygtukas"])){
 
     header("Location: Registracija.php");
