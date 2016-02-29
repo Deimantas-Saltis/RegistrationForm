@@ -173,8 +173,8 @@
             <label for="slaptazodis1" class="col-sm-2 control-label">Slaptažodis:</label>
             <div class="col-sm-10">
                 <input type="password" name="Php_slapt1" class="form-control" style="width: 237px;" value="<?php if(isset($_POST["Php_slapt1"])) echo  $_POST["Php_slapt1"];?>" id="slaptazodis1" placeholder="Slaptažodis">
-                <div class="error"><?php echo $passError;?></div>
                 <input type="password" name="Php_slapt2" class="form-control" style="width: 237px;" value="<?php if(isset($_POST["Php_slapt2"])) echo  $_POST["Php_slapt2"];?>" id="slaptazodis2" placeholder="Slaptažodis">
+                <div class="error"><?php echo $passError;?></div>
                 <div class="error"><?php echo $pass2Error;?></div>
             </div>
         </div>
@@ -198,17 +198,23 @@
             </div>
         </div>
 
+
         <!--Lytis-->
         <div class="form-group col-lg-4 col-lg-offset-4 ">
             <label class="col-sm-2 control-label">Lytis:</label>
             <div class ="col-sm-10">
-                <div class="btn-group">
-                    <button type="button" name="php_lytis1" value="Vyras" class="btn btn-default">Vyras</button>
-                    <button type="button" name="php_lytis2" value="Moteris" class="btn btn-default">Moteris</button>
-<!--                    <div class="error">--><?php //echo $buttonError;?><!--</div>-->
+                <div class="btn-group"  data-toggle="buttons">
+                    <label class="btn btn-default">
+                        <input name="lytis" value="Vyras" type="radio">Vyras
+                    </label>
+                    <label class="btn btn-default">
+                        <input name="lytis" value="Moteris" type="radio">Moteris
+                    </label>
+                    <!--<div class="error">--><?php //echo $buttonError;?><!--</div>-->
                 </div>
             </div>
         </div>
+
 
         <!--Mygtukas(Registrutis)-->
         <div class="col-lg-4 col-lg-offset-4 tarpaiTarpLauku kaireLygiuote">
