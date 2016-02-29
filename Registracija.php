@@ -7,6 +7,7 @@
    $pass2Error = "";
    $phoneError = "";
    $birthError = "";
+   $buttonError = "";
 
      if(isset($_POST["Php_registruoti"])) {
 
@@ -17,19 +18,14 @@
          $data = $_POST["Php_data"];
          $telefonas = $_POST["Php_telefonas"];
          $pastas = $_POST["Php_pastas"];
-         // Sitoje vietoje neateina pranesimas is buttonu, buvo tikrinta 100 kartu+        if (isset($_POST["php_lytis1"]))  $lytis="Vyras";
 
-         if ((isset($_POST["php_lytis2"]))) $lytis = "Moteris";
+
+         if ((isset($_POST["lytis"])))
+         $lytis = $_POST["lytis"];
          else $lytis = "NULL";
 
 
-//$button = "";
 
-
-//$buttonError = "";
-
-
-//    $button = $_POST["Php_lytis"];
 
          if ($vardas == "" or $vardas == "Vardas") {
              $nameError = "Įveskite vardą";
@@ -81,18 +77,18 @@
              $birthError = "Įveskite gimimo datą";
          }
 
-//    if (!isset($_POST["button"]))
-//    {
-//        $buttonError = "Pasirinkite lytį";
-//    }
+        if (!isset($_POST["lytis"])) {
 
+            $buttonError = "Pasirinkite lytį";
+
+        }
 
          require_once("Funkcijos.php");
          $ar_galina_ivesti = Sutikrinti_Ivedamus_Duomenis_Pries_registrujant($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
          if ($ar_galina_ivesti) {
              $pranesimas = Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
 
-             // echo "<script>alert('$pranesimas')  </script> ";
+             echo "<script>alert('$pranesimas')  </script> ";
 
 
              if ($pranesimas == "Sėkmingai prisiregistravote!") {
@@ -210,7 +206,7 @@
                     <label class="btn btn-default">
                         <input name="lytis" value="Moteris" type="radio">Moteris
                     </label>
-                    <!--<div class="error">--><?php //echo $buttonError;?><!--</div>-->
+                    <div class="error"><?php echo $buttonError;?></div>
                 </div>
             </div>
         </div>

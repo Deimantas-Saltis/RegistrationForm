@@ -20,11 +20,6 @@ else
     require_once("Funkcijos.php");
     $VartotojoDuomenys = Grazinti_Prisijungusio_Asmens_Duomenis($VartotojoID);
 
-    echo"JUSU INFORMACIJA: \n";
-    print_r($VartotojoDuomenys);
-
-
-
 
 
 

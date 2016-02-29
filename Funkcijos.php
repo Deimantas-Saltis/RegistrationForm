@@ -1,5 +1,7 @@
 <?php
 
+require_once("duomenu_bazes_kontroleris.php");
+
 function Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas)
 {
 
@@ -8,7 +10,7 @@ function Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefo
 
 	{
 
-			require_once("duomenu_bazes_kontroleris.php");
+
 			$db_objektas = new DB_Kontroleris();
 
 			$Patikrinimo_Salyga = "SELECT * FROM registracijos_forma WHERE 	E_mail='$pastas'";
@@ -38,7 +40,7 @@ function Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefo
 function Patikrinti_Ar_vartotojas_Egzistuoja($pastas, $slaptazodis){
 	$Ar_egzistuoja=false;
 
-	require_once("duomenu_bazes_kontroleris.php");
+
 	$db_objektas = new DB_Kontroleris();
 
 	$Patikrinimo_Salyga ="SELECT * FROM registracijos_forma WHERE 	E_mail='$pastas' AND Slaptazodis='".md5($slaptazodis)."'";
@@ -60,7 +62,7 @@ function Patikrinti_Ar_vartotojas_Egzistuoja($pastas, $slaptazodis){
 
 
 function Grazinti_Prisijungusio_Asmens_Duomenis($ID){
-	require_once("duomenu_bazes_kontroleris.php");
+
 	$db_objektas = new DB_Kontroleris();
 	$uzklausa="SELECT * FROM registracijos_forma WHERE 	ID='$ID'";
 	$Duomenys=$db_objektas->runQuery($uzklausa);
@@ -71,7 +73,7 @@ function Grazinti_Prisijungusio_Asmens_Duomenis($ID){
 
 function Gauti_Vartotojo_ID($pastas, $slaptazodis)
 {
-	require_once("duomenu_bazes_kontroleris.php");
+
 	$db_objektas = new DB_Kontroleris();
 	$uzklausa="SELECT ID FROM registracijos_forma WHERE 	E_mail='$pastas' AND Slaptazodis='".md5($slaptazodis)."'";
 	$ID=$db_objektas->runQuery($uzklausa);
@@ -80,7 +82,7 @@ function Gauti_Vartotojo_ID($pastas, $slaptazodis)
 }
 
 function Gauti_Visus_Vartotojus() {
-	require_once("duomenu_bazes_kontroleris.php");
+
     $db_objektas = new DB_Kontroleris();
     $query = "SELECT * FROM registracijos_forma";
     $duomenys = $db_objektas->insertQuery($query);
@@ -95,7 +97,7 @@ function Gauti_Visus_Vartotojus() {
 
 function Gauti_Vartotojo_Duomenus_pagal_ID($ID)
 {
-	require_once("duomenu_bazes_kontroleris.php");
+
 	$db_objektas = new DB_Kontroleris();
 	$query = "SELECT * FROM registracijos_forma WHERE ID='$ID'";
 	$duomenys = $db_objektas->insertQuery($query);
@@ -135,6 +137,9 @@ function Sutikrinti_Ivedamus_Duomenis_Pries_registrujant($vardas, $pavarde, $sla
 	else $ar_teisingi_duoemnys=true;
 
 	if($data == "" or $data == "Gimimo data") $ar_teisingi_duoemnys=false;
+	else $ar_teisingi_duoemnys=true;
+
+	if (!isset($_POST["lytis"])) $ar_teisingi_duoemnys=false;
 	else $ar_teisingi_duoemnys=true;
 
 	return $ar_teisingi_duoemnys;
