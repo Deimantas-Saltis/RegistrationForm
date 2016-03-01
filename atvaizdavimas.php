@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['duomenu_pasintimas']))
+{
+    header("location: Prisijungimas.php");
+}
+
+
+?>
+
 <html>
 
     <head>

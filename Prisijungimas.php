@@ -11,6 +11,10 @@ if(isset($_POST["prisijungimo_mygtukas"]))
 {
 if($_POST["pastas"] =='admin@admin.com' AND $_POST["slaptazodis"]=='admin' )
 {
+
+    if (!isset($_SESSION['duomenu_pasintimas'])) {
+        $_SESSION['duomenu_pasintimas'] = "";
+    }
     header("Location: atvaizdavimas.php");
     exit;
 }
