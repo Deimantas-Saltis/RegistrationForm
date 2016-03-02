@@ -28,12 +28,12 @@ if(!isset($_SESSION['duomenu_pasintimas']))
             <thead>
                 <tr class="active">
                     <th>Vardas</th>
-                    <th>Pavarde</th>
-                    <th>Slaptazodis</th>
+                    <th>Pavardė</th>
+                    <th>Slaptažodis</th>
                     <th>Gimimo metai</th>
                     <th>Lytis</th>
                     <th>Telefonas</th>
-                    <th>El. pastas</th>
+                    <th>El. paštas</th>
                 </tr>
             </thead>
             <tbody>
