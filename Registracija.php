@@ -117,7 +117,7 @@ if(isset($_POST["Php_registruoti"]))
     <div class="form-group col-lg-4 col-lg-offset-4 tarpaiTarpLauku">
         <label class="col-sm-2 control-label">Data:</label>
         <div class="col-sm-10">
-            <input id="datepicker" type="text"  name="Php_data" class="form-control datepicker" placeholder="Gimimo data" required>
+            <input id="datepicker" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" type="text"  name="Php_data" class="form-control datepicker" placeholder="Gimimo data" required>
             <div class="help-block with-errors"></div>
         </div>
     </div>
