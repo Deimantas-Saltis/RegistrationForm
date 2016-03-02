@@ -65,7 +65,7 @@ if(isset($_POST["registracijos_mygtukas"])){
 
     <div class="form-group col-lg-4 col-lg-offset-4">
         <label for="emailas">Elektroninio pašto adresas</label>
-        <input type="email"  name="pastas" class="form-control" id="emailas" placeholder="E-mailas">
+        <input type="email"  name="pastas"  value="<?php if(isset($_POST["pastas"])) echo $_POST["pastas"]; ; ?>" class="form-control" id="emailas" placeholder="E-mailas">
     </div>
 
     <div class="form-group col-lg-4 col-lg-offset-4">

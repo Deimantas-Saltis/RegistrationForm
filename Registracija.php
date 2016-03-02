@@ -1,15 +1,9 @@
 <?php
-$nameError = "";
-$lastnameError = "";
-$emailError = "";
-$passError = "";
-$pass2Error = "";
-$phoneError = "";
-$birthError = "";
-$buttonError = "";
 
 if(isset($_POST["Php_registruoti"]))
 {
+
+    //-------Duomenu gavimas-------
     $vardas = $_POST["Php_vardas"];
     $pavarde = $_POST["Php_pavarde"];
     $slapt1 = $_POST["Php_slapt1"];
@@ -17,54 +11,16 @@ if(isset($_POST["Php_registruoti"]))
     $data = $_POST["Php_data"];
     $telefonas = $_POST["Php_telefonas"];
     $pastas = $_POST["Php_pastas"];
+    if ((isset($_POST["lytis"])))
+        $lytis = $_POST["lytis"];
+    else $lytis = "NULL";
+    //-----------------------------
 
-//    if ((isset($_POST["lytis"])))
-//        $lytis = $_POST["lytis"];
-//    else $lytis = "NULL";
-//
-//
-//    if ($vardas == "" or $vardas == "Vardas") {
-//        $nameError = "Įveskite vardą";
-//    }
-//    if (!preg_match("/^[a-zA-Z ]*$/", $vardas)) {
-//        $nameError = "Leidžiamos tik raidės ir tarpas";
-//    }
-//    if ($pavarde == "" or $pavarde == "Pavardė") {
-//        $lastnameError = "Įveskite pavardę";
-//    }
-//    if (!preg_match("/^[a-zA-Z ]*$/", $pavarde)) {
-//        $lastnameError = "Leidžiamos tik raidės ir tarpas";
-//    }
-//    if (!filter_var($_POST["Php_pastas"], FILTER_VALIDATE_EMAIL)) {
-//        $emailError = "Netinkamas e-mail";
-//    }
-//    if ($pastas == "" or $pastas == "E-mailas") {
-//        $emailError = "Įveskite e-mail";
-//    }
-//    if ($slapt1 == "" or $slapt1 == "Slaptažodis") {
-//        $passError = "Įveskite slaptažodį";
-//    }
-//    if (strlen($slapt1) < 5) {
-//        $passError = "Slaptažodis per trumpas";
-//    }
-//    if ($slapt2 == "" or $slapt2 == "Slaptažodis") {
-//        $pass2Error = "Pakartokite slaptažodį";
-//    }
-//    if (($slapt2 != $slapt1)) {
-//        $pass2Error = "Slaptažodžiai nesutampa";
-//    }
-//    if (!is_numeric($telefonas) or strlen($telefonas) != 9) {
-//        $phoneError = "Įveskite tinkamą telefono numerį";
-//    }
-//    if ($data == "" or $data == "Gimimo data") {
-//        $birthError = "Įveskite gimimo datą";
-//    }
-//    if (!isset($_POST["lytis"])) {
-//        $buttonError = "Pasirinkite lytį";
-//    }
     require_once("Funkcijos.php");
+    // Tikrinama ar gaima irasyti i db
     $ar_galina_ivesti = Sutikrinti_Ivedamus_Duomenis_Pries_registrujant($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
     if ($ar_galina_ivesti) {
+        // jei galima irasoma
         $pranesimas = Ivesti_i_db($vardas, $pavarde, $slapt1, $slapt2, $data, $lytis, $telefonas, $pastas);
         echo "<script>alert('$pranesimas')  </script> ";
         if ($pranesimas == "Sėkmingai prisiregistravote!") {
