@@ -7,7 +7,7 @@ if(!isset($_SESSION['duomenu_pasintimas']))
     header("location: Prisijungimas.php");
 }
 
-
+session_destroy();
 ?>
 
 <html>
