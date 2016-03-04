@@ -107,7 +107,7 @@ if(isset($_POST["Php_registruoti"]))
     <div class="form-group col-lg-4 col-lg-offset-4 tarpaiTarpLauku">
         <label for="telnumeris" class="col-sm-2 control-label">Telefonas:</label>
         <div class="col-sm-10">
-            <input type="text" data-minlength="9" pattern="[0-9]+" name="Php_telefonas" class="form-control" id="telnumeris" placeholder="Telefono numeris" required>
+            <input type="text" data-minlength="9" pattern="[0-9]+" name="Php_telefonas" class="form-control" id="telnumeris" placeholder="Telefono numeris (80 000 0000)" required>
             <span class="help-block">9 skaitmenys</span>
         </div>
     </div>

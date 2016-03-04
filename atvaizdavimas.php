@@ -23,7 +23,12 @@ session_destroy();
     <div class="navbar navbar-inverse navbar-fixed-bottom navbar-inner container-fluid"></div>
     <div class="navbar navbar-inverse navbar-fixed-top navbar-inner container-fluid"></div>
 
+
+
     <form class="text-center aukstis">
+
+        <h1 class="tarpaiTarpLauku">Administratoriaus Langas</h1>
+
             <table class = "table">
             <thead>
                 <tr class="active">
